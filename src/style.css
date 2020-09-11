@@ -1,9 +1,359 @@
-/*body{
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+.navbar {
+  background-color: #48484a;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+  padding: 0 30px;
+  position: ;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+.navbar a.navbar-brand {
+  float: left;
+  height: inherit;
+  line-height: inherit;
+  padding: 0 30px;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.navbar a.navbar-brand span {
+  font-size: 28px;
+  font-weight: 700;
+}
+.navbar ul {
+  float: right;
+  list-style: none;
+  height: inherit;
+  line-height: inherit;
+  padding: 0 50px;
+}
+.navbar ul li {
+  display: inline-block;
+}
+.navbar ul li a {
+  display: block;
+  text-align: center;
+  min-width: 120px;
+  padding: 0 30px;
+}
+.navbar ul li a:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+.navbar .navbar-toggler {
+  display: none;
+}
 
-}*/
-.img{
-	width: 400px;
-	height: 400px;
-	background-color: red;
+.row {
+  display: flex; /* equal height of the children */
+}
+.container {
+  color: #fff;
+  background-size: cover;
+  background-color: #290536;
+  height: auto;
+  padding: 50px;
+  text-align: center;
+
 
 }
+.item1{
+    grid-area:image;
+  }
+  .item2{grid-area:today;
+    padding-top:20px;
+  }
+  .item3{
+    grid-area:menu;
+    padding-left: 25 px;
+    padding-top:;
+    background-color:;
+
+  }
+  .item4{grid-area: descr;}
+  .item5{grid-area: temp;}
+  .item6{grid-area: main;}
+  .row{
+    display: grid;
+    grid-template-areas: 
+      'image image today today today menu'
+      'image image descr descr descr descr'
+      'temp temp descr descr descr descr';
+  }
+.forecastCard{
+    height:600px;
+    width: 600px;
+    background-color: #ffff;
+    padding:20px; 
+    color: #48484a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    margin-top: 20px;
+    margin-left:0;
+    overflow: auto;
+  }
+  .forecastCard p{
+    margin-top: 10px;
+    text-align: center;
+  }
+  .forecastCard img{
+    text-align: left;
+    display: block;
+    margin-top: -100px;
+  }
+  .forecastCard h2{
+    text-align: center;
+    padding:10px;
+  }
+#infoIcon{
+  font-size: 20px;
+}
+.card{
+  height: 150px;
+  width: 600px;
+  background-color: #ffff;
+  padding:20px; 
+  color: #48484a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  margin-top: 20px;
+  margin-left: 320px;
+}
+#lab{
+  text-align: left;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+#hlab{
+  float: right;
+  margin-top: -25px;
+}
+.hourlyCard{
+  height: 600px;
+  width: 450px;
+  float: right;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  margin-top: -600px;
+  overflow: auto;
+
+}
+
+@media (max-width: 991px) {
+  .navbar ul {
+    padding: 0 10px;
+  }
+  .navbar ul li a {
+    min-width: 100px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0;
+  }
+  .navbar ul {
+    width: 100%;
+    padding: 0;
+    background-color: rgba(0,0,0,0.9);
+    /* height: auto; */
+    height: 100vh;
+    max-height: 0;
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
+  }
+  .navbar ul.open {
+    max-height: 100vh;
+  }
+  .navbar ul li {
+    width: 100%;
+    /* border-bottom: 1px solid rgba(255,255,255,0.3); */
+  }
+  .navbar ul li a {
+    padding: 0;
+  }
+  .navbar .navbar-toggler {
+    display: block;
+    position: absolute;
+    height: 40px;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: #fff;
+    border: 3px solid #fff;
+    /* border: none; */
+    /* border-radius: 4px; */
+    outline: none;
+    padding: 0 5px;
+    cursor: pointer;
+  }
+  .navbar .navbar-toggler span,
+  .navbar .navbar-toggler span::before,
+  .navbar .navbar-toggler span::after {
+    display: block;
+    content: '';
+    background-color: #fff;
+    height: 3px;
+    width: 28px;
+    border-radius: 4px;
+    transition: all ease-in-out 0.3s;
+  }
+  .navbar .navbar-toggler span::before {
+    transform: translateY(-8px);
+  }
+  .navbar .navbar-toggler span::after {
+    transform: translateY(5px);
+  }
+  
+  .navbar .navbar-toggler.open-navbar-toggler span {
+    /* transform: rotate(90deg); */
+    background-color: transparent;
+    /* transform: scale(0.85) rotate(270deg); */
+  }
+  .navbar .navbar-toggler.open-navbar-toggler span::before {
+    transform: translateY(0px) rotate(45deg);
+    /* transform: translateY(0px) scale(0.75) rotate(45deg); */
+  }
+  .navbar .navbar-toggler.open-navbar-toggler span::after {
+    transform: translateY(-3px) rotate(-45deg);
+    /* transform: translateY(-3px) scale(0.75) rotate(-45deg); */
+  }
+  .location{
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .card {
+    height: 150px;
+    width: 300px;
+    background-color: #ffff;
+    padding:20px; 
+    color: #48484a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    margin-top: 20px;
+    margin-left: -20px;
+
+  }
+  .forecastCard{
+    height:400px;
+    width: 300px;
+    background-color: #ffff;
+    padding:20px; 
+    color: #48484a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    margin-top: 20px;
+    margin-left: -20px;
+    overflow: auto;
+  }
+  .forecastCard p{
+    margin-top: 10px;
+    text-align: center;
+  }
+  .forecastCard img{
+    text-align: left;
+    display: block;
+    margin-top: -100px;
+  }
+  .forecastCard h2{
+    text-align: center;
+    padding:10px; 
+  }
+  .item1{
+    grid-area:image;
+  }
+  .item2{grid-area:today;
+    padding-top:20px;
+  }
+  .item3{
+    grid-area:menu;
+    padding-left: 25 px;
+    padding-top:;
+    background-color:;
+
+  }
+  .item4{grid-area: descr;
+    
+  }
+  .item5{grid-area: temp;}
+  .item6{grid-area: main;}
+  .row{
+    display: grid;
+    grid-template-areas: 
+      'image image today today today menu'
+      'image image descr descr descr descr'
+      'temp temp descr descr descr descr';
+  }
+  .sp{
+    background-color: #48484a;
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin-top: 3px;
+    border-radius: 20px;
+  }
+  .dailyItem{
+    padding: 2px;
+    background-color: #48484a;
+    color: #fff;
+    border-radius: 10px;
+  }
+  #details{
+    background-color: red;
+    height: 400px;
+  }
+  .hourlyCard{
+    display: none;
+  }
+  #lab{
+    margin-top: 20px;
+    padding-left: 50px;
+  }
+  #lab h2{
+    width: 300px;
+    padding: 0;
+  }
+  #hlab{
+    display: none;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

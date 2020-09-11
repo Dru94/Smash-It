@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Weather App</title>
+	<script src="https://kit.fontawesome.com/f359f547ac.js" crossorigin="anonymous"></script>	
+
 </head>
 <body>
-	<h1>Eureka</h1>
-	<h3>Does your mama know</h3>
-	<div class="img">
-		<img src="./assets/miguel.jpg">
-	</div>
+	<nav class="navbar">
+		<a href="#" class="navbar-brand"><span>S</span>mash<span>I</span>t</a>
+    <ul>
+      <li><a href="#html">Hourly Forecast</a></li>
+      <li><a href="#javascript">View History</a></li>
+    </ul>
+    <button class="navbar-toggler">
+      <span></span>
+    </button>
+  </nav>
+
+  <section class="container" id="contain">
+  	<div class="location">
+  		<h1 id="loc"></h1>
+  	</div>
+  	<div class="card">
+  		<div class="row">
+  			<div class="item1">
+  				<img src="#" id="icon">
+  			</div>
+  			<div class="item2">
+  				<p id="date"></p>
+  			</div>
+  			<div class="item3" >
+  				<a href="detail.html"><i class="fas fa-info-circle" id="infoIcon"></i></a>
+  			</div>
+  			<div class="item4">
+  				<h3 id="w_main"></h3>
+  				<h3 id="w_desc"></h3>
+  			</div>
+  			<div class="item5">
+  				<p id="w_temp"></p>
+  			</div>
+
+  		</div>
+  	</div>
+  	<div id="lab"><h2>Daily Forecast.</h2><h2 id="hlab">Hourly Forecast.</h2></div>
+	  	<div class="forecastCard" id="forecast">
+	  		
+
+	  			<div class="dailyItem" id="dailyDt">
+	  		
+	  			</div>
+	  	</div>
+	  	<div class="hourlyCard" id="hourlyC">
+	  	</div>
+  	</div>
+ </section>
 </body>
 </html>
